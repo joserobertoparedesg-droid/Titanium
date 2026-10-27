@@ -1,0 +1,17 @@
+{
+  "hook": "Planta 100% y pozo de agua en Mañongo",
+  "cta": "Contáctame para agendar tu visita",
+  "ctaSub": "Escríbeme por mensaje directo",
+  "targetSeconds": 45,
+  "corrections": {
+    "del agua a agua": "de Naguanagua",
+    "del agua agua": "de Naguanagua"
+  },
+  "brand": {
+    "font": "Montserrat",
+    "wine": "#6B1E2E",
+    "wineDark": "#3E0F19",
+    "beige": "#E8DCC4",
+    "beigeLight": "#F7F1E6"
+  }
+}

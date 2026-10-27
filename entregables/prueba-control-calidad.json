@@ -1,0 +1,23 @@
+{
+  "video": "out/prueba.mp4",
+  "formato": "1080x1920 @ 30/1 fps, 30.40s",
+  "sonoridad_integrada_LUFS": -14.2,
+  "sincronia": {
+    "palabras_emparejadas": "56/61",
+    "desfase_medio_ms": 21,
+    "desfase_p95_ms": 59,
+    "desfase_max_ms": 223
+  },
+  "integridad_texto": {
+    "similitud_editado_vs_escuchado": 0.938,
+    "escuchado": "Planta 100 % y pozo de agua en Mañongo. Hoy te muestro este apartamento en una de las mejores zonas en Aguanagua. Tiene tres habitaciones, dos baños y un amplio balcón con vista a la montaña. Cuenta con planta eléctrica al 100 % y pozo de agua propio. Además, puesto el estacionamiento, techado y vigilancia las 24 horas. Contáctame para agendar tu visita."
+  },
+  "voz_vs_musica": {
+    "voz_LUFS": -16.0,
+    "musica_bajo_voz_LUFS": -37.0,
+    "margen_dB": 21.0,
+    "criterio": "> 15 dB = voz claramente inteligible"
+  },
+  "hoja_de_contacto": "out/prueba.contact.jpg",
+  "resultado": "OK"
+}

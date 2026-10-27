@@ -1,0 +1,842 @@
+{
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "durationInFrames": 910,
+  "brand": {
+    "font": "Montserrat",
+    "wine": "#6B1E2E",
+    "wineDark": "#3E0F19",
+    "beige": "#E8DCC4",
+    "beigeLight": "#F7F1E6"
+  },
+  "hook": {
+    "text": "Planta 100% y pozo de agua en Mañongo",
+    "startFrame": 0,
+    "endFrame": 90
+  },
+  "cta": {
+    "text": "Contáctame para agendar tu visita",
+    "sub": "Escríbeme por mensaje directo",
+    "startFrame": 802,
+    "endFrame": 910
+  },
+  "segments": [
+    {
+      "clip": "clip-01",
+      "src": "media/clips/prueba/clip-01.mp4",
+      "inFrame": 34,
+      "outFrame": 142,
+      "startFrame": 0,
+      "durationFrames": 108,
+      "text": "Planta 100% y pozo de agua en Mañongo."
+    },
+    {
+      "clip": "clip-03",
+      "src": "media/clips/prueba/clip-03.mp4",
+      "inFrame": 32,
+      "outFrame": 180,
+      "startFrame": 108,
+      "durationFrames": 148,
+      "text": "Hoy te muestro este apartamento en una de las mejores zonas de Naguanagua."
+    },
+    {
+      "clip": "clip-04",
+      "src": "media/clips/prueba/clip-04.mp4",
+      "inFrame": 34,
+      "outFrame": 204,
+      "startFrame": 256,
+      "durationFrames": 170,
+      "text": "Tiene tres habitaciones, dos baños y un amplio balcón con vista a la montaña."
+    },
+    {
+      "clip": "clip-06",
+      "src": "media/clips/prueba/clip-06.mp4",
+      "inFrame": 34,
+      "outFrame": 179,
+      "startFrame": 426,
+      "durationFrames": 145,
+      "text": "Cuenta con planta eléctrica al 100% y pozo de agua propio."
+    },
+    {
+      "clip": "clip-08",
+      "src": "media/clips/prueba/clip-08.mp4",
+      "inFrame": 32,
+      "outFrame": 202,
+      "startFrame": 571,
+      "durationFrames": 170,
+      "text": "Además, puesto de estacionamiento techado y vigilancia las 24 horas."
+    },
+    {
+      "clip": "clip-09",
+      "src": "media/clips/prueba/clip-09.mp4",
+      "inFrame": 34,
+      "outFrame": 113,
+      "startFrame": 741,
+      "durationFrames": 79,
+      "text": "Contáctame para agendar tu visita."
+    }
+  ],
+  "overlays": [
+    {
+      "src": "media/clips/prueba/clip-05.mp4",
+      "clip": "clip-05",
+      "startFrame": 205,
+      "durationFrames": 72,
+      "inFrame": 3
+    },
+    {
+      "src": "media/clips/prueba/clip-07.mp4",
+      "clip": "clip-07",
+      "startFrame": 373,
+      "durationFrames": 72,
+      "inFrame": 3
+    },
+    {
+      "src": "media/clips/prueba/clip-10.mp4",
+      "clip": "clip-10",
+      "startFrame": 512,
+      "durationFrames": 72,
+      "inFrame": 3
+    }
+  ],
+  "zooms": [
+    {
+      "frame": 205,
+      "durationFrames": 73
+    },
+    {
+      "frame": 314,
+      "durationFrames": 38
+    },
+    {
+      "frame": 430,
+      "durationFrames": 53
+    },
+    {
+      "frame": 512,
+      "durationFrames": 59
+    },
+    {
+      "frame": 602,
+      "durationFrames": 36
+    }
+  ],
+  "transitions": [
+    {
+      "frame": 108,
+      "type": "wipe"
+    },
+    {
+      "frame": 256,
+      "type": "wipe"
+    },
+    {
+      "frame": 426,
+      "type": "wipe"
+    },
+    {
+      "frame": 571,
+      "type": "wipe"
+    }
+  ],
+  "captions": [
+    {
+      "start": 0.117,
+      "end": 2.107,
+      "text": "Planta 100% y pozo",
+      "key": true,
+      "keyWords": [
+        0,
+        1,
+        3
+      ],
+      "words": [
+        {
+          "text": "Planta",
+          "start": 0.117,
+          "end": 0.487
+        },
+        {
+          "text": "100%",
+          "start": 0.487,
+          "end": 1.547
+        },
+        {
+          "text": "y",
+          "start": 1.547,
+          "end": 1.747
+        },
+        {
+          "text": "pozo",
+          "start": 1.747,
+          "end": 2.107
+        }
+      ]
+    },
+    {
+      "start": 2.107,
+      "end": 3.723,
+      "text": "de agua en Mañongo.",
+      "key": true,
+      "keyWords": [
+        1,
+        3
+      ],
+      "words": [
+        {
+          "text": "de",
+          "start": 2.107,
+          "end": 2.267
+        },
+        {
+          "text": "agua",
+          "start": 2.267,
+          "end": 2.607
+        },
+        {
+          "text": "en",
+          "start": 2.607,
+          "end": 2.807
+        },
+        {
+          "text": "Mañongo.",
+          "start": 2.807,
+          "end": 3.387
+        }
+      ]
+    },
+    {
+      "start": 3.723,
+      "end": 4.543,
+      "text": "Hoy te muestro",
+      "key": false,
+      "keyWords": [],
+      "words": [
+        {
+          "text": "Hoy",
+          "start": 3.723,
+          "end": 3.943
+        },
+        {
+          "text": "te",
+          "start": 3.943,
+          "end": 4.103
+        },
+        {
+          "text": "muestro",
+          "start": 4.103,
+          "end": 4.543
+        }
+      ]
+    },
+    {
+      "start": 4.543,
+      "end": 5.623,
+      "text": "este apartamento",
+      "key": false,
+      "keyWords": [],
+      "words": [
+        {
+          "text": "este",
+          "start": 4.543,
+          "end": 4.863
+        },
+        {
+          "text": "apartamento",
+          "start": 4.863,
+          "end": 5.623
+        }
+      ]
+    },
+    {
+      "start": 5.623,
+      "end": 6.823,
+      "text": "en una de las mejores",
+      "key": false,
+      "keyWords": [],
+      "words": [
+        {
+          "text": "en",
+          "start": 5.623,
+          "end": 5.843
+        },
+        {
+          "text": "una",
+          "start": 5.843,
+          "end": 6.023
+        },
+        {
+          "text": "de",
+          "start": 6.023,
+          "end": 6.223
+        },
+        {
+          "text": "las",
+          "start": 6.223,
+          "end": 6.423
+        },
+        {
+          "text": "mejores",
+          "start": 6.423,
+          "end": 6.823
+        }
+      ]
+    },
+    {
+      "start": 6.823,
+      "end": 8.65,
+      "text": "zonas de Naguanagua.",
+      "key": true,
+      "keyWords": [
+        2
+      ],
+      "words": [
+        {
+          "text": "zonas",
+          "start": 6.823,
+          "end": 7.343
+        },
+        {
+          "text": "de",
+          "start": 7.343,
+          "end": 7.843
+        },
+        {
+          "text": "Naguanagua.",
+          "start": 7.843,
+          "end": 8.343
+        }
+      ]
+    },
+    {
+      "start": 8.65,
+      "end": 9.29,
+      "text": "Tiene tres",
+      "key": false,
+      "keyWords": [],
+      "words": [
+        {
+          "text": "Tiene",
+          "start": 8.65,
+          "end": 8.97
+        },
+        {
+          "text": "tres",
+          "start": 8.97,
+          "end": 9.29
+        }
+      ]
+    },
+    {
+      "start": 9.29,
+      "end": 10.47,
+      "text": "habitaciones,",
+      "key": true,
+      "keyWords": [
+        0
+      ],
+      "words": [
+        {
+          "text": "habitaciones,",
+          "start": 9.29,
+          "end": 10.15
+        }
+      ]
+    },
+    {
+      "start": 10.47,
+      "end": 11.15,
+      "text": "dos baños",
+      "key": true,
+      "keyWords": [
+        1
+      ],
+      "words": [
+        {
+          "text": "dos",
+          "start": 10.47,
+          "end": 10.67
+        },
+        {
+          "text": "baños",
+          "start": 10.67,
+          "end": 11.15
+        }
+      ]
+    },
+    {
+      "start": 11.15,
+      "end": 12.43,
+      "text": "y un amplio balcón",
+      "key": true,
+      "keyWords": [
+        3
+      ],
+      "words": [
+        {
+          "text": "y",
+          "start": 11.15,
+          "end": 11.31
+        },
+        {
+          "text": "un",
+          "start": 11.31,
+          "end": 11.49
+        },
+        {
+          "text": "amplio",
+          "start": 11.49,
+          "end": 11.95
+        },
+        {
+          "text": "balcón",
+          "start": 11.95,
+          "end": 12.43
+        }
+      ]
+    },
+    {
+      "start": 12.43,
+      "end": 13.05,
+      "text": "con vista",
+      "key": true,
+      "keyWords": [
+        1
+      ],
+      "words": [
+        {
+          "text": "con",
+          "start": 12.43,
+          "end": 12.63
+        },
+        {
+          "text": "vista",
+          "start": 12.63,
+          "end": 13.05
+        }
+      ]
+    },
+    {
+      "start": 13.05,
+      "end": 14.317,
+      "text": "a la montaña.",
+      "key": false,
+      "keyWords": [],
+      "words": [
+        {
+          "text": "a",
+          "start": 13.05,
+          "end": 13.27
+        },
+        {
+          "text": "la",
+          "start": 13.27,
+          "end": 13.35
+        },
+        {
+          "text": "montaña.",
+          "start": 13.35,
+          "end": 13.99
+        }
+      ]
+    },
+    {
+      "start": 14.317,
+      "end": 15.477,
+      "text": "Cuenta con planta",
+      "key": true,
+      "keyWords": [
+        2
+      ],
+      "words": [
+        {
+          "text": "Cuenta",
+          "start": 14.317,
+          "end": 14.697
+        },
+        {
+          "text": "con",
+          "start": 14.697,
+          "end": 14.997
+        },
+        {
+          "text": "planta",
+          "start": 14.997,
+          "end": 15.477
+        }
+      ]
+    },
+    {
+      "start": 15.477,
+      "end": 17.057,
+      "text": "eléctrica al 100%",
+      "key": true,
+      "keyWords": [
+        2
+      ],
+      "words": [
+        {
+          "text": "eléctrica",
+          "start": 15.477,
+          "end": 16.137
+        },
+        {
+          "text": "al",
+          "start": 16.137,
+          "end": 16.337
+        },
+        {
+          "text": "100%",
+          "start": 16.337,
+          "end": 17.057
+        }
+      ]
+    },
+    {
+      "start": 17.057,
+      "end": 18.417,
+      "text": "y pozo de agua",
+      "key": true,
+      "keyWords": [
+        1,
+        3
+      ],
+      "words": [
+        {
+          "text": "y",
+          "start": 17.057,
+          "end": 17.537
+        },
+        {
+          "text": "pozo",
+          "start": 17.537,
+          "end": 17.897
+        },
+        {
+          "text": "de",
+          "start": 17.897,
+          "end": 18.057
+        },
+        {
+          "text": "agua",
+          "start": 18.057,
+          "end": 18.417
+        }
+      ]
+    },
+    {
+      "start": 18.417,
+      "end": 19.157,
+      "text": "propio.",
+      "key": false,
+      "keyWords": [],
+      "words": [
+        {
+          "text": "propio.",
+          "start": 18.417,
+          "end": 18.837
+        }
+      ]
+    },
+    {
+      "start": 19.157,
+      "end": 20.057,
+      "text": "Además,",
+      "key": false,
+      "keyWords": [],
+      "words": [
+        {
+          "text": "Además,",
+          "start": 19.157,
+          "end": 19.597
+        }
+      ]
+    },
+    {
+      "start": 20.057,
+      "end": 20.397,
+      "text": "puesto",
+      "key": true,
+      "keyWords": [
+        0
+      ],
+      "words": [
+        {
+          "text": "puesto",
+          "start": 20.057,
+          "end": 20.397
+        }
+      ]
+    },
+    {
+      "start": 20.397,
+      "end": 21.557,
+      "text": "de estacionamiento",
+      "key": true,
+      "keyWords": [
+        1
+      ],
+      "words": [
+        {
+          "text": "de",
+          "start": 20.397,
+          "end": 20.657
+        },
+        {
+          "text": "estacionamiento",
+          "start": 20.657,
+          "end": 21.557
+        }
+      ]
+    },
+    {
+      "start": 21.557,
+      "end": 23.137,
+      "text": "techado y vigilancia",
+      "key": true,
+      "keyWords": [
+        2
+      ],
+      "words": [
+        {
+          "text": "techado",
+          "start": 21.557,
+          "end": 22.217
+        },
+        {
+          "text": "y",
+          "start": 22.217,
+          "end": 22.397
+        },
+        {
+          "text": "vigilancia",
+          "start": 22.397,
+          "end": 23.137
+        }
+      ]
+    },
+    {
+      "start": 23.137,
+      "end": 24.807,
+      "text": "las 24 horas.",
+      "key": false,
+      "keyWords": [],
+      "words": [
+        {
+          "text": "las",
+          "start": 23.137,
+          "end": 23.357
+        },
+        {
+          "text": "24",
+          "start": 23.357,
+          "end": 23.897
+        },
+        {
+          "text": "horas.",
+          "start": 23.897,
+          "end": 24.497
+        }
+      ]
+    },
+    {
+      "start": 24.807,
+      "end": 25.487,
+      "text": "Contáctame",
+      "key": false,
+      "keyWords": [],
+      "words": [
+        {
+          "text": "Contáctame",
+          "start": 24.807,
+          "end": 25.487
+        }
+      ]
+    },
+    {
+      "start": 25.487,
+      "end": 26.347,
+      "text": "para agendar",
+      "key": false,
+      "keyWords": [],
+      "words": [
+        {
+          "text": "para",
+          "start": 25.487,
+          "end": 25.767
+        },
+        {
+          "text": "agendar",
+          "start": 25.767,
+          "end": 26.347
+        }
+      ]
+    },
+    {
+      "start": 26.347,
+      "end": 27.277,
+      "text": "tu visita.",
+      "key": false,
+      "keyWords": [],
+      "words": [
+        {
+          "text": "tu",
+          "start": 26.347,
+          "end": 26.547
+        },
+        {
+          "text": "visita.",
+          "start": 26.547,
+          "end": 27.127
+        }
+      ]
+    }
+  ],
+  "sfx": [
+    {
+      "src": "media/sfx/whoosh.wav",
+      "frame": 100,
+      "volume": 0.25
+    },
+    {
+      "src": "media/sfx/click.wav",
+      "frame": 111,
+      "volume": 0.22
+    },
+    {
+      "src": "media/sfx/click.wav",
+      "frame": 135,
+      "volume": 0.22
+    },
+    {
+      "src": "media/sfx/click.wav",
+      "frame": 168,
+      "volume": 0.22
+    },
+    {
+      "src": "media/sfx/ding.wav",
+      "frame": 204,
+      "volume": 0.3
+    },
+    {
+      "src": "media/sfx/whoosh.wav",
+      "frame": 248,
+      "volume": 0.25
+    },
+    {
+      "src": "media/sfx/click.wav",
+      "frame": 259,
+      "volume": 0.22
+    },
+    {
+      "src": "media/sfx/click.wav",
+      "frame": 278,
+      "volume": 0.22
+    },
+    {
+      "src": "media/sfx/ding.wav",
+      "frame": 313,
+      "volume": 0.3
+    },
+    {
+      "src": "media/sfx/click.wav",
+      "frame": 333,
+      "volume": 0.22
+    },
+    {
+      "src": "media/sfx/click.wav",
+      "frame": 372,
+      "volume": 0.22
+    },
+    {
+      "src": "media/sfx/click.wav",
+      "frame": 391,
+      "volume": 0.22
+    },
+    {
+      "src": "media/sfx/whoosh.wav",
+      "frame": 418,
+      "volume": 0.25
+    },
+    {
+      "src": "media/sfx/ding.wav",
+      "frame": 429,
+      "volume": 0.3
+    },
+    {
+      "src": "media/sfx/click.wav",
+      "frame": 463,
+      "volume": 0.22
+    },
+    {
+      "src": "media/sfx/ding.wav",
+      "frame": 511,
+      "volume": 0.3
+    },
+    {
+      "src": "media/sfx/click.wav",
+      "frame": 552,
+      "volume": 0.22
+    },
+    {
+      "src": "media/sfx/whoosh.wav",
+      "frame": 563,
+      "volume": 0.25
+    },
+    {
+      "src": "media/sfx/click.wav",
+      "frame": 574,
+      "volume": 0.22
+    },
+    {
+      "src": "media/sfx/ding.wav",
+      "frame": 601,
+      "volume": 0.3
+    },
+    {
+      "src": "media/sfx/click.wav",
+      "frame": 646,
+      "volume": 0.22
+    },
+    {
+      "src": "media/sfx/click.wav",
+      "frame": 693,
+      "volume": 0.22
+    },
+    {
+      "src": "media/sfx/click.wav",
+      "frame": 743,
+      "volume": 0.22
+    },
+    {
+      "src": "media/sfx/click.wav",
+      "frame": 764,
+      "volume": 0.22
+    },
+    {
+      "src": "media/sfx/click.wav",
+      "frame": 789,
+      "volume": 0.22
+    }
+  ],
+  "music": {
+    "src": "media/music/house-jazz.wav",
+    "volume": 0.2,
+    "duckVolume": 0.06,
+    "speech": [
+      [
+        0.117,
+        27.277
+      ]
+    ]
+  },
+  "log": [
+    "toma repetida: clip-02 descartado, se usa clip-03 (confianza 0.86 vs 0.85)",
+    "gancho: clip-01 va primero",
+    "llamada a la acción: clip-09 va al final",
+    "b-roll clip-05 sobre \"zonas de Naguanagua.\"",
+    "b-roll clip-07 sobre \"con vista\"",
+    "b-roll clip-10 sobre \"y pozo de agua\""
+  ]
+}
