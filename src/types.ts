@@ -19,6 +19,8 @@ export type Caption = {
 
 export type Segment = {
   clip: string;
+  kind?: "video" | "image";
+  motion?: number; // 0-3: dirección del movimiento de cámara en fotos
   src: string;
   inFrame: number;
   outFrame: number;
@@ -29,6 +31,7 @@ export type Segment = {
 
 export type Overlay = {
   clip: string;
+  kind?: "video" | "image";
   src: string;
   startFrame: number;
   durationFrames: number;
@@ -41,7 +44,7 @@ export type EditProps = {
   height: number;
   durationInFrames: number;
   brand: Partial<Brand>;
-  hook: { text: string; startFrame: number; endFrame: number };
+  hook: { text: string; startFrame: number; endFrame: number; position?: "center" | "bottom"; eyebrow?: string };
   cta: { text: string; sub?: string; startFrame: number; endFrame: number };
   segments: Segment[];
   overlays: Overlay[];

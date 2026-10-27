@@ -64,7 +64,7 @@ def main():
     model = WhisperModel(args.model, device="cpu", compute_type="int8", cpu_threads=os.cpu_count() or 4)
     for clip in manifest["clips"]:
         out = args.clips_dir / f"{clip['id']}.words.json"
-        if out.exists() and not args.force:
+        if clip.get("kind") == "image" or (out.exists() and not args.force):
             continue
         audio = load_audio(args.clips_dir / clip["file"])
         segments, info = model.transcribe(

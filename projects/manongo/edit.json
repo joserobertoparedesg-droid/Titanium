@@ -1,0 +1,492 @@
+{
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "durationInFrames": 1251,
+  "brand": {
+    "font": "Montserrat",
+    "wine": "#6B1E2E",
+    "wineDark": "#3E0F19",
+    "beige": "#E8DCC4",
+    "beigeLight": "#F7F1E6"
+  },
+  "hook": {
+    "text": "Planta 100% y pozo de agua en Mañongo",
+    "startFrame": 0,
+    "endFrame": 92,
+    "position": "bottom",
+    "eyebrow": ""
+  },
+  "cta": {
+    "text": "Contáctame para agendar tu visita",
+    "sub": "Escríbeme por mensaje directo",
+    "startFrame": 1148,
+    "endFrame": 1251
+  },
+  "segments": [
+    {
+      "clip": "clip-01",
+      "kind": "image",
+      "src": "media/clips/manongo/clip-01.jpg",
+      "inFrame": 0,
+      "outFrame": 92,
+      "startFrame": 0,
+      "durationFrames": 92,
+      "text": "",
+      "motion": 0
+    },
+    {
+      "clip": "clip-03",
+      "kind": "image",
+      "src": "media/clips/manongo/clip-03.jpg",
+      "inFrame": 0,
+      "outFrame": 61,
+      "startFrame": 92,
+      "durationFrames": 61,
+      "text": "Cocina empotrada",
+      "motion": 1
+    },
+    {
+      "clip": "clip-08",
+      "kind": "image",
+      "src": "media/clips/manongo/clip-08.jpg",
+      "inFrame": 0,
+      "outFrame": 45,
+      "startFrame": 153,
+      "durationFrames": 45,
+      "text": "",
+      "motion": 2
+    },
+    {
+      "clip": "clip-07",
+      "kind": "image",
+      "src": "media/clips/manongo/clip-07.jpg",
+      "inFrame": 0,
+      "outFrame": 46,
+      "startFrame": 198,
+      "durationFrames": 46,
+      "text": "",
+      "motion": 3
+    },
+    {
+      "clip": "clip-02",
+      "kind": "image",
+      "src": "media/clips/manongo/clip-02.jpg",
+      "inFrame": 0,
+      "outFrame": 46,
+      "startFrame": 244,
+      "durationFrames": 46,
+      "text": "",
+      "motion": 0
+    },
+    {
+      "clip": "clip-05",
+      "kind": "image",
+      "src": "media/clips/manongo/clip-05.jpg",
+      "inFrame": 0,
+      "outFrame": 61,
+      "startFrame": 290,
+      "durationFrames": 61,
+      "text": "Comedor",
+      "motion": 1
+    },
+    {
+      "clip": "clip-28",
+      "kind": "image",
+      "src": "media/clips/manongo/clip-28.jpg",
+      "inFrame": 0,
+      "outFrame": 46,
+      "startFrame": 351,
+      "durationFrames": 46,
+      "text": "",
+      "motion": 2
+    },
+    {
+      "clip": "clip-09",
+      "kind": "image",
+      "src": "media/clips/manongo/clip-09.jpg",
+      "inFrame": 0,
+      "outFrame": 61,
+      "startFrame": 397,
+      "durationFrames": 61,
+      "text": "Sala",
+      "motion": 3
+    },
+    {
+      "clip": "clip-12",
+      "kind": "image",
+      "src": "media/clips/manongo/clip-12.jpg",
+      "inFrame": 0,
+      "outFrame": 45,
+      "startFrame": 458,
+      "durationFrames": 45,
+      "text": "",
+      "motion": 0
+    },
+    {
+      "clip": "clip-11",
+      "kind": "image",
+      "src": "media/clips/manongo/clip-11.jpg",
+      "inFrame": 0,
+      "outFrame": 61,
+      "startFrame": 503,
+      "durationFrames": 61,
+      "text": "Balcón",
+      "motion": 1
+    },
+    {
+      "clip": "clip-10",
+      "kind": "image",
+      "src": "media/clips/manongo/clip-10.jpg",
+      "inFrame": 0,
+      "outFrame": 46,
+      "startFrame": 564,
+      "durationFrames": 46,
+      "text": "",
+      "motion": 2
+    },
+    {
+      "clip": "clip-23",
+      "kind": "image",
+      "src": "media/clips/manongo/clip-23.jpg",
+      "inFrame": 0,
+      "outFrame": 92,
+      "startFrame": 610,
+      "durationFrames": 92,
+      "text": "Planta 100%",
+      "motion": 3
+    },
+    {
+      "clip": "clip-18",
+      "kind": "image",
+      "src": "media/clips/manongo/clip-18.jpg",
+      "inFrame": 0,
+      "outFrame": 61,
+      "startFrame": 702,
+      "durationFrames": 61,
+      "text": "Habitaciones",
+      "motion": 0
+    },
+    {
+      "clip": "clip-20",
+      "kind": "image",
+      "src": "media/clips/manongo/clip-20.jpg",
+      "inFrame": 0,
+      "outFrame": 45,
+      "startFrame": 763,
+      "durationFrames": 45,
+      "text": "",
+      "motion": 1
+    },
+    {
+      "clip": "clip-26",
+      "kind": "image",
+      "src": "media/clips/manongo/clip-26.jpg",
+      "inFrame": 0,
+      "outFrame": 46,
+      "startFrame": 808,
+      "durationFrames": 46,
+      "text": "",
+      "motion": 2
+    },
+    {
+      "clip": "clip-14",
+      "kind": "image",
+      "src": "media/clips/manongo/clip-14.jpg",
+      "inFrame": 0,
+      "outFrame": 61,
+      "startFrame": 854,
+      "durationFrames": 61,
+      "text": "Baños",
+      "motion": 3
+    },
+    {
+      "clip": "clip-16",
+      "kind": "image",
+      "src": "media/clips/manongo/clip-16.jpg",
+      "inFrame": 0,
+      "outFrame": 46,
+      "startFrame": 915,
+      "durationFrames": 46,
+      "text": "",
+      "motion": 0
+    },
+    {
+      "clip": "clip-24",
+      "kind": "image",
+      "src": "media/clips/manongo/clip-24.jpg",
+      "inFrame": 0,
+      "outFrame": 46,
+      "startFrame": 961,
+      "durationFrames": 46,
+      "text": "",
+      "motion": 1
+    },
+    {
+      "clip": "clip-27",
+      "kind": "image",
+      "src": "media/clips/manongo/clip-27.jpg",
+      "inFrame": 0,
+      "outFrame": 46,
+      "startFrame": 1007,
+      "durationFrames": 46,
+      "text": "",
+      "motion": 2
+    },
+    {
+      "clip": "clip-06",
+      "kind": "image",
+      "src": "media/clips/manongo/clip-06.jpg",
+      "inFrame": 0,
+      "outFrame": 91,
+      "startFrame": 1053,
+      "durationFrames": 91,
+      "text": "Pozo de agua",
+      "motion": 3
+    },
+    {
+      "clip": "clip-04",
+      "kind": "image",
+      "src": "media/clips/manongo/clip-04.jpg",
+      "inFrame": 0,
+      "outFrame": 107,
+      "startFrame": 1144,
+      "durationFrames": 107,
+      "text": "",
+      "motion": 0
+    }
+  ],
+  "overlays": [],
+  "zooms": [
+    {
+      "frame": 616,
+      "durationFrames": 76
+    },
+    {
+      "frame": 1059,
+      "durationFrames": 75
+    }
+  ],
+  "transitions": [
+    {
+      "frame": 610,
+      "type": "wipe"
+    },
+    {
+      "frame": 1053,
+      "type": "wipe"
+    }
+  ],
+  "captions": [
+    {
+      "start": 3.267,
+      "end": 4.98,
+      "text": "Cocina empotrada",
+      "key": false,
+      "keyWords": [],
+      "words": [
+        {
+          "text": "Cocina",
+          "start": 3.267,
+          "end": 3.567
+        },
+        {
+          "text": "empotrada",
+          "start": 3.407,
+          "end": 3.707
+        }
+      ]
+    },
+    {
+      "start": 9.867,
+      "end": 11.58,
+      "text": "Comedor",
+      "key": false,
+      "keyWords": [],
+      "words": [
+        {
+          "text": "Comedor",
+          "start": 9.867,
+          "end": 10.167
+        }
+      ]
+    },
+    {
+      "start": 13.433,
+      "end": 15.147,
+      "text": "Sala",
+      "key": false,
+      "keyWords": [],
+      "words": [
+        {
+          "text": "Sala",
+          "start": 13.433,
+          "end": 13.733
+        }
+      ]
+    },
+    {
+      "start": 16.967,
+      "end": 18.68,
+      "text": "Balcón",
+      "key": false,
+      "keyWords": [],
+      "words": [
+        {
+          "text": "Balcón",
+          "start": 16.967,
+          "end": 17.267
+        }
+      ]
+    },
+    {
+      "start": 20.533,
+      "end": 23.28,
+      "text": "Planta 100%",
+      "key": true,
+      "keyWords": [
+        0,
+        1
+      ],
+      "words": [
+        {
+          "text": "Planta",
+          "start": 20.533,
+          "end": 20.833
+        },
+        {
+          "text": "100%",
+          "start": 20.673,
+          "end": 20.973
+        }
+      ]
+    },
+    {
+      "start": 23.6,
+      "end": 25.313,
+      "text": "Habitaciones",
+      "key": false,
+      "keyWords": [],
+      "words": [
+        {
+          "text": "Habitaciones",
+          "start": 23.6,
+          "end": 23.9
+        }
+      ]
+    },
+    {
+      "start": 28.667,
+      "end": 30.38,
+      "text": "Baños",
+      "key": false,
+      "keyWords": [],
+      "words": [
+        {
+          "text": "Baños",
+          "start": 28.667,
+          "end": 28.967
+        }
+      ]
+    },
+    {
+      "start": 35.3,
+      "end": 38.013,
+      "text": "Pozo de agua",
+      "key": true,
+      "keyWords": [
+        0,
+        1,
+        2
+      ],
+      "words": [
+        {
+          "text": "Pozo",
+          "start": 35.3,
+          "end": 35.6
+        },
+        {
+          "text": "de",
+          "start": 35.44,
+          "end": 35.74
+        },
+        {
+          "text": "agua",
+          "start": 35.58,
+          "end": 35.88
+        }
+      ]
+    }
+  ],
+  "sfx": [
+    {
+      "src": "media/sfx/click.wav",
+      "frame": 97,
+      "volume": 0.3
+    },
+    {
+      "src": "media/sfx/click.wav",
+      "frame": 295,
+      "volume": 0.3
+    },
+    {
+      "src": "media/sfx/click.wav",
+      "frame": 402,
+      "volume": 0.3
+    },
+    {
+      "src": "media/sfx/click.wav",
+      "frame": 508,
+      "volume": 0.3
+    },
+    {
+      "src": "media/sfx/whoosh.wav",
+      "frame": 602,
+      "volume": 0.3
+    },
+    {
+      "src": "media/sfx/click.wav",
+      "frame": 615,
+      "volume": 0.3
+    },
+    {
+      "src": "media/sfx/ding.wav",
+      "frame": 620,
+      "volume": 0.4
+    },
+    {
+      "src": "media/sfx/click.wav",
+      "frame": 707,
+      "volume": 0.3
+    },
+    {
+      "src": "media/sfx/click.wav",
+      "frame": 859,
+      "volume": 0.3
+    },
+    {
+      "src": "media/sfx/whoosh.wav",
+      "frame": 1045,
+      "volume": 0.3
+    },
+    {
+      "src": "media/sfx/click.wav",
+      "frame": 1058,
+      "volume": 0.3
+    },
+    {
+      "src": "media/sfx/ding.wav",
+      "frame": 1064,
+      "volume": 0.4
+    }
+  ],
+  "music": {
+    "src": "media/music/house-jazz.wav",
+    "volume": 0.5,
+    "duckVolume": 0.5,
+    "speech": []
+  },
+  "log": [
+    "clip-19: excluido (casi idéntica a clip-18 (misma habitación y encuadre))"
+  ]
+}

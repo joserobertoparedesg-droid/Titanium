@@ -48,44 +48,54 @@ def main(project: Path, video: Path):
     report["formato"] = f"{v['width']}x{v['height']} @ {v['r_frame_rate']} fps, {float(info['format']['duration']):.2f}s"
     report["sonoridad_integrada_LUFS"] = lufs(video)
 
-    # 1-2. Re-transcripción del render
-    model = WhisperModel(DEFAULT_MODEL, device="cpu", compute_type="int8")
-    segs, _ = model.transcribe(load_audio(video), language="es", word_timestamps=True, vad_filter=True,
-                               initial_prompt=PROMPT, beam_size=5, condition_on_previous_text=False)
-    heard = [w for s in segs for w in (s.words or [])]
-    cap_words = [w for c in edit["captions"] for w in c["words"]]
-    a = [norm(w["text"]).replace(" ", "") for w in cap_words]
-    b = [norm(w.word).replace(" ", "") for w in heard]
-    sm = difflib.SequenceMatcher(None, a, b, autojunk=False)
-    offsets = []
-    for blk in sm.get_matching_blocks():
-        for k in range(blk.size):
-            offsets.append(cap_words[blk.a + k]["start"] - heard[blk.b + k].start)
-    off = np.abs(np.array(offsets)) if offsets else np.array([np.nan])
-    report["sincronia"] = {
-        "palabras_emparejadas": f"{len(offsets)}/{len(cap_words)}",
-        "desfase_medio_ms": round(float(np.mean(off)) * 1000),
-        "desfase_p95_ms": round(float(np.percentile(off, 95)) * 1000),
-        "desfase_max_ms": round(float(np.max(off)) * 1000),
-    }
-    edited_text = " ".join(s["text"] for s in edit["segments"])
-    heard_text = " ".join(w.word.strip() for w in heard)
-    report["integridad_texto"] = {
-        "similitud_editado_vs_escuchado": round(difflib.SequenceMatcher(
-            None, norm(edited_text).replace(" %", "%"), norm(heard_text).replace(" %", "%")).ratio(), 3),
-        "escuchado": heard_text,
-    }
+    has_voice = bool(edit["music"]["speech"])
+    if has_voice:
+        # 1-2. Re-transcripción del render
+        model = WhisperModel(DEFAULT_MODEL, device="cpu", compute_type="int8")
+        segs, _ = model.transcribe(load_audio(video), language="es", word_timestamps=True, vad_filter=True,
+                                   initial_prompt=PROMPT, beam_size=5, condition_on_previous_text=False)
+        heard = [w for s in segs for w in (s.words or [])]
+        cap_words = [w for c in edit["captions"] for w in c["words"]]
+        a = [norm(w["text"]).replace(" ", "") for w in cap_words]
+        b = [norm(w.word).replace(" ", "") for w in heard]
+        sm = difflib.SequenceMatcher(None, a, b, autojunk=False)
+        offsets = []
+        for blk in sm.get_matching_blocks():
+            for k in range(blk.size):
+                offsets.append(cap_words[blk.a + k]["start"] - heard[blk.b + k].start)
+        off = np.abs(np.array(offsets)) if offsets else np.array([np.nan])
+        report["sincronia"] = {
+            "palabras_emparejadas": f"{len(offsets)}/{len(cap_words)}",
+            "desfase_medio_ms": round(float(np.mean(off)) * 1000),
+            "desfase_p95_ms": round(float(np.percentile(off, 95)) * 1000),
+            "desfase_max_ms": round(float(np.max(off)) * 1000),
+        }
+        edited_text = " ".join(s["text"] for s in edit["segments"])
+        heard_text = " ".join(w.word.strip() for w in heard)
+        report["integridad_texto"] = {
+            "similitud_editado_vs_escuchado": round(difflib.SequenceMatcher(
+                None, norm(edited_text).replace(" %", "%"), norm(heard_text).replace(" %", "%")).ratio(), 3),
+            "escuchado": heard_text,
+        }
 
-    # 3. Margen voz/música: voz normalizada a -16 LUFS en la ingesta; música atenuada con ducking.
-    music_src = Path("public") / edit["music"]["src"]
-    m_lufs = lufs(music_src)
-    duck_db = 20 * np.log10(edit["music"]["duckVolume"])
-    report["voz_vs_musica"] = {
-        "voz_LUFS": -16.0,
-        "musica_bajo_voz_LUFS": round(m_lufs + duck_db, 1),
-        "margen_dB": round(-16.0 - (m_lufs + duck_db), 1),
-        "criterio": "> 15 dB = voz claramente inteligible",
-    }
+    else:
+        report["sincronia"] = "sin voz: no aplica (montaje de fotos)"
+        report["integridad_texto"] = {"similitud_editado_vs_escuchado": 1.0}
+
+    if has_voice:
+        # 3. Margen voz/música: voz normalizada a -16 LUFS en la ingesta; música atenuada con ducking.
+        music_src = Path("public") / edit["music"]["src"]
+        m_lufs = lufs(music_src)
+        duck_db = 20 * np.log10(edit["music"]["duckVolume"])
+        report["voz_vs_musica"] = {
+            "voz_LUFS": -16.0,
+            "musica_bajo_voz_LUFS": round(m_lufs + duck_db, 1),
+            "margen_dB": round(-16.0 - (m_lufs + duck_db), 1),
+            "criterio": "> 15 dB = voz claramente inteligible",
+        }
+
+    else:
+        report["voz_vs_musica"] = {"margen_dB": 99, "criterio": "sin voz"}
 
     # 4-5. Hoja de contacto
     sheet = video.with_suffix(".contact.jpg")
@@ -95,7 +105,7 @@ def main(project: Path, video: Path):
                     f"fps={n / total},scale=270:-1,tile={n}x1", "-frames:v", "1", str(sheet)], check=True)
     report["hoja_de_contacto"] = str(sheet)
 
-    ok = (report["sincronia"]["desfase_p95_ms"] <= 200
+    ok = ((not has_voice or report["sincronia"]["desfase_p95_ms"] <= 200)
           and report["integridad_texto"]["similitud_editado_vs_escuchado"] >= 0.9
           and report["voz_vs_musica"]["margen_dB"] >= 15)
     report["resultado"] = "OK" if ok else "REVISAR"

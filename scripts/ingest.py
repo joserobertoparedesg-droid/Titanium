@@ -17,6 +17,7 @@ from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 VIDEO_EXT = {".mp4", ".mov", ".m4v", ".mkv", ".avi", ".webm", ".mts", ".3gp"}
+IMAGE_EXT = {".jpg", ".jpeg", ".png", ".heic", ".webp"}
 W, H, FPS = 1080, 1920, 30
 VOICE_CHAIN = ("highpass=f=80,afftdn=nr=10:nf=-45,"
                "acompressor=threshold=-20dB:ratio=3:attack=8:release=120:makeup=2,"
@@ -39,7 +40,30 @@ def probe(path: Path) -> dict:
     return json.loads(out)
 
 
+def process_image(src: Path, out_dir: Path) -> dict:
+    """Foto -> JPEG vertical 1350x2400 (margen extra para acercamientos sin perder nitidez).
+    Respeta la rotación EXIF. Si la foto es cuadrada u horizontal (p. ej. una portada con texto),
+    se encaja completa sobre una versión desenfocada de sí misma para no recortar el contenido."""
+    from PIL import Image, ImageFilter, ImageOps
+    W2, H2 = 1350, 2400
+    im = ImageOps.exif_transpose(Image.open(src)).convert("RGB")
+    cover = ImageOps.fit(im, (W2, H2), Image.LANCZOS)
+    if im.width / im.height > 0.85:
+        bg = cover.filter(ImageFilter.GaussianBlur(40)).point(lambda v: int(v * 0.55))
+        fg = ImageOps.contain(im, (W2, H2), Image.LANCZOS)
+        bg.paste(fg, ((W2 - fg.width) // 2, (H2 - fg.height) // 2))
+        cover, fit = bg, "contain"
+    else:
+        fit = "cover"
+    dst = out_dir / f"{slug(src)}.jpg"
+    cover.save(dst, quality=90)
+    return {"id": dst.stem, "source": src.name, "file": dst.name, "kind": "image", "fit": fit,
+            "duration": 0, "orig_size": f"{im.width}x{im.height}", "has_audio": False}
+
+
 def process(src: Path, out_dir: Path) -> dict:
+    if src.suffix.lower() in IMAGE_EXT:
+        return process_image(src, out_dir)
     info = probe(src)
     v = next((s for s in info["streams"] if s["codec_type"] == "video"), None)
     a = next((s for s in info["streams"] if s["codec_type"] == "audio"), None)
@@ -61,6 +85,7 @@ def process(src: Path, out_dir: Path) -> dict:
     dur = float(probe(dst)["format"]["duration"])
     return {
         "id": dst.stem,
+        "kind": "video",
         "source": src.name,
         "file": dst.name,
         "duration": round(dur, 3),
@@ -71,7 +96,7 @@ def process(src: Path, out_dir: Path) -> dict:
 
 def main(in_dir: Path, out_dir: Path):
     out_dir.mkdir(parents=True, exist_ok=True)
-    files = sorted((p for p in in_dir.iterdir() if p.suffix.lower() in VIDEO_EXT), key=natural_key)
+    files = sorted((p for p in in_dir.iterdir() if p.suffix.lower() in VIDEO_EXT | IMAGE_EXT), key=natural_key)
     if not files:
         sys.exit(f"No hay videos en {in_dir}")
     with ThreadPoolExecutor(max_workers=2) as ex:

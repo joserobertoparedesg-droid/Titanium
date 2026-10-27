@@ -3,6 +3,7 @@ import {
   AbsoluteFill,
   Audio,
   Easing,
+  Img,
   OffthreadVideo,
   Sequence,
   continueRender,
@@ -81,7 +82,11 @@ export const Reel: React.FC<EditProps> = (props) => {
       <AbsoluteFill style={{ transform: `scale(${scale})` }}>
         {props.segments.map((s, i) => (
           <Sequence key={i} from={s.startFrame} durationInFrames={s.durationFrames} name={`${s.clip} · ${s.text.slice(0, 24)}`}>
-            <SegmentVideo src={s.src} trimBefore={s.inFrame} duration={s.durationFrames} />
+            {s.kind === "image" ? (
+              <Photo src={s.src} duration={s.durationFrames} motion={s.motion ?? i} />
+            ) : (
+              <SegmentVideo src={s.src} trimBefore={s.inFrame} duration={s.durationFrames} />
+            )}
           </Sequence>
         ))}
       </AbsoluteFill>
@@ -89,7 +94,7 @@ export const Reel: React.FC<EditProps> = (props) => {
       {/* B-roll sobre la voz (sin audio), con Ken Burns suave */}
       {props.overlays.map((o, i) => (
         <Sequence key={`o${i}`} from={o.startFrame} durationInFrames={o.durationFrames} name={`B-roll ${o.clip}`}>
-          <BRoll src={o.src} trimBefore={o.inFrame} duration={o.durationFrames} />
+          <BRoll src={o.src} kind={o.kind} trimBefore={o.inFrame} duration={o.durationFrames} />
         </Sequence>
       ))}
 
@@ -110,7 +115,7 @@ export const Reel: React.FC<EditProps> = (props) => {
       ))}
 
       <Sequence from={props.hook.startFrame} durationInFrames={props.hook.endFrame - props.hook.startFrame} name="Gancho">
-        <Hook text={props.hook.text} brand={brand} durationFrames={props.hook.endFrame - props.hook.startFrame} />
+        <Hook text={props.hook.text} brand={brand} position={props.hook.position} eyebrow={props.hook.eyebrow} durationFrames={props.hook.endFrame - props.hook.startFrame} />
       </Sequence>
 
       <Sequence from={props.cta.startFrame} name="Llamada a la acción">
@@ -155,7 +160,26 @@ const SegmentVideo: React.FC<{ src: string; trimBefore: number; duration: number
   );
 };
 
-const BRoll: React.FC<{ src: string; trimBefore: number; duration: number }> = ({ src, trimBefore, duration }) => {
+// Foto con movimiento de cámara suave (acercar/alejar + desplazamiento lateral alterno).
+const Photo: React.FC<{ src: string; duration: number; motion: number }> = ({ src, duration, motion }) => {
+  const frame = useCurrentFrame();
+  const p = interpolate(frame, [0, duration], [0, 1], { easing: Easing.inOut(Easing.sin) });
+  const zoomIn = motion % 2 === 0;
+  const scale = zoomIn ? 1.0 + 0.09 * p : 1.09 - 0.09 * p;
+  const dx = (motion % 4 < 2 ? 1 : -1) * interpolate(p, [0, 1], [-18, 18]);
+  return (
+    <AbsoluteFill style={{ transform: `scale(${scale}) translateX(${dx}px)` }}>
+      <Img src={staticFile(src)} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+    </AbsoluteFill>
+  );
+};
+
+const BRoll: React.FC<{ src: string; kind?: "video" | "image"; trimBefore: number; duration: number }> = ({
+  src,
+  kind,
+  trimBefore,
+  duration,
+}) => {
   const frame = useCurrentFrame();
   const opacity = interpolate(frame, [0, 6, duration - 6, duration], [0, 1, 1, 0], {
     extrapolateLeft: "clamp",
@@ -164,7 +188,11 @@ const BRoll: React.FC<{ src: string; trimBefore: number; duration: number }> = (
   const scale = interpolate(frame, [0, duration], [1.12, 1.0]);
   return (
     <AbsoluteFill style={{ opacity, transform: `scale(${scale})` }}>
-      <OffthreadVideo src={staticFile(src)} trimBefore={trimBefore} muted style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+      {kind === "image" ? (
+        <Img src={staticFile(src)} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+      ) : (
+        <OffthreadVideo src={staticFile(src)} trimBefore={trimBefore} muted style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+      )}
     </AbsoluteFill>
   );
 };

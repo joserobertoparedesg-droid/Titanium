@@ -4,8 +4,10 @@ media/input/*
 !media/input/.gitkeep
 media/work/
 public/media/clips/*
+!public/media/clips/manongo/
 !public/media/clips/.gitkeep
 .remotion/
 __pycache__/
 *.pyc
 media/input-test/
+!public/media/clips/manongo/

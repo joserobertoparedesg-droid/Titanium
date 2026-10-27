@@ -1,0 +1,115 @@
+{
+  "hook": "Planta 100% y pozo de agua en Mañongo",
+  "cta": "Contáctame para agendar tu visita",
+  "ctaSub": "Escríbeme por mensaje directo",
+  "bpm": 118,
+  "musicVolume": 0.5,
+  "brand": {
+    "font": "Montserrat",
+    "wine": "#6B1E2E",
+    "wineDark": "#3E0F19",
+    "beige": "#E8DCC4",
+    "beigeLight": "#F7F1E6"
+  },
+  "intro": {
+    "clip": "clip-01",
+    "beats": 6
+  },
+  "scenes": [
+    {
+      "clip": "clip-03",
+      "beats": 4,
+      "label": "Cocina empotrada"
+    },
+    {
+      "clip": "clip-08",
+      "beats": 3
+    },
+    {
+      "clip": "clip-07",
+      "beats": 3
+    },
+    {
+      "clip": "clip-02",
+      "beats": 3
+    },
+    {
+      "clip": "clip-05",
+      "beats": 4,
+      "label": "Comedor"
+    },
+    {
+      "clip": "clip-28",
+      "beats": 3
+    },
+    {
+      "clip": "clip-09",
+      "beats": 4,
+      "label": "Sala"
+    },
+    {
+      "clip": "clip-12",
+      "beats": 3
+    },
+    {
+      "clip": "clip-11",
+      "beats": 4,
+      "label": "Balcón"
+    },
+    {
+      "clip": "clip-10",
+      "beats": 3
+    },
+    {
+      "clip": "clip-23",
+      "beats": 6,
+      "label": "Planta 100%",
+      "key": true
+    },
+    {
+      "clip": "clip-18",
+      "beats": 4,
+      "label": "Habitaciones"
+    },
+    {
+      "clip": "clip-20",
+      "beats": 3
+    },
+    {
+      "clip": "clip-26",
+      "beats": 3
+    },
+    {
+      "clip": "clip-14",
+      "beats": 4,
+      "label": "Baños"
+    },
+    {
+      "clip": "clip-16",
+      "beats": 3
+    },
+    {
+      "clip": "clip-24",
+      "beats": 3
+    },
+    {
+      "clip": "clip-27",
+      "beats": 3
+    },
+    {
+      "clip": "clip-06",
+      "beats": 6,
+      "label": "Pozo de agua",
+      "key": true
+    }
+  ],
+  "outro": {
+    "clip": "clip-04",
+    "beats": 7
+  },
+  "excluded": {
+    "clip-19": "casi idéntica a clip-18 (misma habitación y encuadre)"
+  },
+  "hookPosition": "bottom",
+  "hookEyebrow": ""
+}

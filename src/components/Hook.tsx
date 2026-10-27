@@ -3,11 +3,13 @@ import { AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig } fr
 import type { Brand } from "../types";
 
 // Gancho inicial: tarjeta beige con texto vinotinto, palabras escalonadas.
-export const Hook: React.FC<{ text: string; brand: Brand; durationFrames: number }> = ({
-  text,
-  brand,
-  durationFrames,
-}) => {
+export const Hook: React.FC<{
+  text: string;
+  brand: Brand;
+  durationFrames: number;
+  position?: "center" | "bottom";
+  eyebrow?: string;
+}> = ({ text, brand, durationFrames, position = "center", eyebrow = "EN VENTA" }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const words = text.split(" ");
@@ -19,7 +21,14 @@ export const Hook: React.FC<{ text: string; brand: Brand; durationFrames: number
   const line = interpolate(frame, [6, 22], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
 
   return (
-    <AbsoluteFill style={{ justifyContent: "center", alignItems: "center", opacity: exit }}>
+    <AbsoluteFill
+      style={{
+        justifyContent: position === "bottom" ? "flex-end" : "center",
+        alignItems: "center",
+        paddingBottom: position === "bottom" ? 260 : 0,
+        opacity: exit,
+      }}
+    >
       <AbsoluteFill style={{ background: `linear-gradient(180deg, rgba(0,0,0,0.05), ${brand.wineDark}99)` }} />
       <div
         style={{
@@ -32,7 +41,7 @@ export const Hook: React.FC<{ text: string; brand: Brand; durationFrames: number
           textAlign: "center",
         }}
       >
-        <div
+        {eyebrow ? <div
           style={{
             fontFamily: brand.font,
             fontWeight: 600,
@@ -43,8 +52,8 @@ export const Hook: React.FC<{ text: string; brand: Brand; durationFrames: number
             opacity: line,
           }}
         >
-          EN VENTA
-        </div>
+          {eyebrow}
+        </div> : null}
         <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", columnGap: 18 }}>
           {words.map((w, i) => {
             const s = spring({ frame: frame - 4 - i * 3, fps, config: { damping: 14, stiffness: 200 } });

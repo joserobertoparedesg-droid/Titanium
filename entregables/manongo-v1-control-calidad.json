@@ -1,0 +1,15 @@
+{
+  "video": "out/manongo.mp4",
+  "formato": "1080x1920 @ 30/1 fps, 41.80s",
+  "sonoridad_integrada_LUFS": -13.2,
+  "sincronia": "sin voz: no aplica (montaje de fotos)",
+  "integridad_texto": {
+    "similitud_editado_vs_escuchado": 1.0
+  },
+  "voz_vs_musica": {
+    "margen_dB": 99,
+    "criterio": "sin voz"
+  },
+  "hoja_de_contacto": "out/manongo.contact.jpg",
+  "resultado": "OK"
+}
